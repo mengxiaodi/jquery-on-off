@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>无标题文档</title>
+	<style type="text/css">
+	#abc{ background:#fcf; height:100px; width:100px;}
+	</style>
+	<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+</head>
+
+<body>
+	<button id="banding">绑定事件</button>
+	<button id="jiechu">解除事件</button>
+	
+	<script>
+	
+		function alrt(){
+			alert(123);	
+		}
+		$(document).ready(function(e) {
+			function alrt(){
+				alert(123);	
+			}
+			$("#banding").click(function(){
+				if(!$("#abc").get(0)){
+					var abc=$("<div id='abc'>哈喽</div>");	
+					$("body").append(abc);
+				}
+				//绑定事件
+				$(document).on("click","#abc",alrt);
+			});
+		  	//解除事件
+			$("#jiechu").on("click",function(){
+				$(document).off('click');
+			});
+		
+		/*
+			1,写成函数名字可以解除绑定事件
+			2,
+		*/
+	
+			
+			
+		});
+	  
+		
+		/*
+			1,写成函数名字可以解除绑定事件
+			2,
+		*/
+	</script>
+
+
+</body>
+</html>
